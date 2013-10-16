@@ -1,0 +1,118 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LEIÐBEININGAR:
+% Skýrið þessa skrá tg12_dX-X.X.X.tex þar sem
+% fyrsta Xið er númer dæmatímans sem þið mætið í og hin Xin eru númer
+% dæmisins sem þið leysið, þ.e. kafli.undirkafli.númer
+% 
+% Leiðbeiningar fyrir LaTeX getið þið fundið í möppunni Kennsluáætlun
+% skráin latex_introduction.pdf inniheldur flest allt sem þið þurfið
+% að vita um LaTeX.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc} 
+\usepackage[english,icelandic]{babel}
+\usepackage{t1enc}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mdwlist} 
+\usepackage{graphicx}
+
+\voffset=-1.0in
+\hoffset=-0.3in
+\textwidth=6in
+\textheight=10.2in
+
+\begin{document}
+\noindent Háskóli Íslands \hfill vor 2012\\
+Töluleg greining STÆ405G \hfill dæmatími 0
+\rule[8pt]{\textwidth}{1pt}
+
+
+\bigskip
+
+\begin{center}
+{\large Lausn við dæmi 2.1.2}
+\end{center}
+
+% Skrifið upp fyrirmælin í dæminu í slaufusviganna
+\emph{
+Sýnið að fallið 
+% Við notum $$ $$ til þess að setja stærðfærðitexta í sér línu, en $ $ ef hann er inn í 
+% venjulegum texta.
+$$f(x) = x^3 + x^2 - 3x - 3$$ 
+hafi núllstöð á bilinu $(1,2)$. Framkvæmið næst 5 ítranir í
+helmingunaraðferðinni og staðfestið að skekkjan sé minni en fræðilega skekkjumatið
+fyrir aðferðina, en að skekkjan sé ekki endilega
+minnkandi. Rétt gildi á núllstöðinni er $p=\sqrt{3}$
+}
+
+\medskip
+
+% Hér byrjar svo lausnin ykkar
+Lausn: Byrjum á því að athuga fallgildin í endapunktum bilsins $(1,2)$,
+
+% Notum align til þess að jafna línurnar fallega, & segir til um við
+% hvað er miðað. align* þýðir að línurnar eru ekki númeraðar hægra megin,
+% 
+\begin{align*}
+f(1) &= 1^3 + 1^2 - 3\cdot 1 - 3 = 1 + 1 - 3 - 3 = -4 \\
+f(2) &= 2^3 + 2^2 - 3\cdot 2 - 3 = 8 + 4 - 6 - 3 = 3.
+\end{align*}
+Þar sem formerkin eru ólík og fallið er samfellt á bilinu þá segir milligildissetningin
+að fallið $f$ hafi núllstöð á $(1,2)$.
+
+% Getum sett inn handvirkt lóðrétt bil með smallskip, medskip og bigskip
+\medskip
+
+Setjum nú upp töflu með ítrununum. Annar og þriðju dálkurinn innihalda endapunktana
+á bilinu sem við erum að skoða og fjórði dálkurinn inniheldur miðpunkt bilsins.
+Fimmti og sjötti dálkurinn innihalda fallgildin í $a_n$ og miðpunktinum $x_n$ en við þurfum það
+til þess að sjá hvort bilið í næstru ítrun verður $(a_n,x_n)$ eða $(x_n,b_n)$.
+Ef $f(a_n)$ og $f(x_n)$ hafa ólík formerki þá erum við í fyrra tilvikinu 
+% athugið að til þess að n+1 fari allt í vísinn (subscript) þá þarf að setja
+% slaufusviga utanum það 
+$(a_{n+1},b_{n+1}) = (a_n,x_n)$, annars þá er
+$(a_{n+1},b_{n+1}) = (x_n,b_n)$.
+% Byrjum á því að miðja töfluna. Skilgreinum töfluna með tabular, slaufusviginn fyrir
+% aftan tabular vísar til þess að það eru 7 vinstri-jafnaðir dálkar (l þýðir vinstri-jafnað,
+% eins er hægt að nota c og r). Strikin | á milli gefa til kynna að það eigi að vera
+% lóðrétt strik á milli dálka.
+% hline býr svo til láréttu strikin.
+% & aðgreinir dálka og \\ endar línuna.
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|l|l|}
+\hline
+$n$ & $a_n$  & $b_n$ & $x_n$ & $f(a_n)$ & $f(x_n)$ & $e_n=p-x_n$ & $\frac{b-a}{2^{n}}$ \\
+\hline
+   1 &   1.000000 &  2.000000 & 1.500000 & -4.000000 & -1.875000 &  0.232051 &  0.500000 \\
+   2 &   1.500000 &  2.000000 & 1.750000 & -1.875000 &  0.171875 &  0.017949 &  0.250000 \\
+   3 &   1.500000 &  1.750000 & 1.625000 & -1.875000 & -0.943359 &  0.107051 &  0.125000 \\
+   4 &   1.625000 &  1.750000 & 1.687500 & -0.943359 & -0.409424 &  0.044551 &  0.062500 \\
+   5 &   1.687500 &  1.750000 & 1.718750 & -0.409424 & -0.124786 &  0.013301 &  0.031250 \\
+\hline
+\end{tabular}
+\end{center}
+
+Þegar við berum saman síðustu tvo dálkana, sem innihalda raunverulegu skekkjuna og
+fræðilegu skekkjuna þá sjáum við að raunverulega skekkjan er alltaf minni, en hins
+vegar þá minnkar hún ekki endilega í hverju skrefi. Til dæmis þegar við förum í skref
+$n=3$ þá eykst skekkjan töluvert.
+
+% Setjum að lokum inn eina mynd til gamans, til þess notum við graphicx pakkann.
+% Einfaldast er að notast við png myndir
+\begin{center}
+ \includegraphics[width=8cm]{mynd}
+\end{center}
+
+
+\bigskip
+\begin{flushright}
+% það er auðvelt að nota tt til þess að fá vélritaða stafi, eins er hægt að fá
+% feitletraða stafi með bf. Munið bara að setja { } utan um allt.
+ Benedikt Steinar Magnússon, {\tt bsm+tg@hi.is}\\
+ \today
+\end{flushright}
+\end{document}

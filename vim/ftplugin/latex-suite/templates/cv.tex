@@ -1,0 +1,51 @@
+%!TEX TS-program = pdflatexmk
+\documentclass[a4paper,draft, final]{scrartcl}
+
+%\usepackage{scrpage2} % Fyrir header og footer
+\usepackage{fancyhdr}
+\usepackage[icelandic]{babel} % Íslenska
+\usepackage[T1]{fontenc} % Íslenska
+\usepackage[utf8]{inputenc} % Íslenska
+\usepackage{titlesec}
+\usepackage{pdfpages}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage[cm]{fullpage}
+\usepackage[usenames]{color} %TIL að lita
+\usepackage{hyperref} % Fyrir hyperlinka
+\usepackage{soul} % Notað fyrir áherslu - sjá \so
+\usepackage{marvosym} %Notað til að fá fram ýmis tákn
+\usepackage{tabularx,colortbl} %Búa til töflur, og gráa bordera
+
+\addtolength{\textwidth}{-0.31in}
+\addtolength{\textheight}{0.75in}
+\renewcommand*\rmdefault{ppl}\normalfont\upshape
+\newcommand{\gray}{\rowcolor[gray]{.90}}
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.0pt}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks, urlcolor=linkcolour, linkcolor=linkcolour}
+\setlength{\headheight}{15pt}
+%\fancyhead[LO,LE]{\textbf{<++> \hfill Guðmundur Kári Stefánsson}}
+\fancyhead[H]{}
+
+\begin{document}
+\textbf{<++> \hfill Guðmundur Kári Stefánsson}
+
+%---------------------Vinna-----------------------
+\section{<++>}
+\begin{tabular}{r|p{13.5cm}}
+\textsc{<++>}     & <++> \\
+\textsc{<++>} & \footnotesize{<++>}\\
+ 	\multicolumn{2}{c}{} \\
+\textsc{<++>}     & <++> \\
+\textsc{<++>} & \footnotesize{<++>}\\
+ 	\multicolumn{2}{c}{} \\
+\textsc{<++>}     & <++> \\
+\textsc{<++>} & \footnotesize{<++>}\\
+ 	\multicolumn{2}{c}{} \\
+
+\end{tabular}
+\end{document}

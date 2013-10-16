@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/gks'
+let g:netrw_dirhist_2='/home/gks/.emacs.d'
+let g:netrw_dirhist_3='/home/gks/.emacs.d/auto-save-list'
+let g:netrw_dirhist_4='/home/gks/.config/ranger'
+let g:netrw_dirhist_5='/home/gks/dotfiles/conky'
+let g:netrw_dirhist_6='/home/gks/dotfiles'
+let g:netrw_dirhist_7='/home/gks/dotfiles/vim'
+let g:netrw_dirhist_8='/home/gks/dotfiles/conky'
+let g:netrw_dirhist_9='/home/gks/dotfiles/vim'

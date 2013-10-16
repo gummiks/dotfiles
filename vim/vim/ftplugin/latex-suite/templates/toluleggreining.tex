@@ -1,0 +1,29 @@
+<+   +>	!comp!	!exe!
+%        Skrárnafn: !comp!expand("%:p:t")!comp!
+%     Skrá stofnuð: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+% Síðasta breyting: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+%
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc} 
+\usepackage[english,icelandic]{babel}
+\usepackage{t1enc}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mdwlist} 
+\usepackage{graphicx}
+
+\voffset=-1.0in
+\hoffset=-0.3in
+\textwidth=6in
+\textheight=10.2in
+
+\begin{document}
+\noindent Háskóli Íslands \hfill vor 2012\\
+Töluleg greining STÆ405G \hfill dæmatími 0
+\rule[8pt]{\textwidth}{1pt}
+<++>
+
+\end{document}

@@ -1,0 +1,71 @@
+commands.txt
+
+:Author: gks
+:Email: gks@zen
+:Date: 2013-07-10 14:32
+
+Surround.txt
+============
+ysiw)
+ysiW}
+ds"
+cs)"
+ysiw\ --LaTeX
+
+EasyMotion
+==========
+\\w -- forward
+\\W
+\\b -- backward
+\\b
+
+\\fo -- find next o
+\\Fo -- find next o to the left
+
+sudo pacman -S arandr
+sudo packer -S root
+sudo packer -S insync-nautilus
+sudo pacman -S cups
+sudo pacman -S xclip
+
+GIT
+===
+$ git config --global user.name "Your Name Here"
+$ git config --global user.email "your_email@example.com"
+
+Password:
+
+$ git config --global credential.helper cache
+$ git config --global credential.helper 'cache --timeout=3600'
+
+Setup
+-----
+$ git init
+$ git add README.md
+$ git commit -m "first"
+$ git remote add origin git@github.com:gummiks/gummiks.github.io.git
+$ git push -u origin master
+
+
+
+PERMISSION DENIED:
+==================
+Tutorial:
+http://stackoverflow.com/questions/9560892/permissions-error-github-ssh-key-not-recognized
+
+Make a new key:
+$ ssh-keygen -t rsa -C "your_email@youremail.com"
+- enter the passphrase
+ 
+Copy the ssh-key:
+$ xclip -sel clip < ~/.ssh/id_rsa.pub
+Go to your github page, and under account choose SSH-keys, and add the new key:
+
+Test it out:
+$ ssh -T git@github.com 
+
+
+
+
+git clone git://github.com/rootpy/rootpy.git
+.. vim: expandtab filetype=rst shiftwidth=4 tabstop=4

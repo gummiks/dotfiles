@@ -1,0 +1,82 @@
+%noteMaster.tex - by GumKa
+\documentclass[12pt,a4paper]{article}
+
+%\usepackage{scrpage2} % Fyrir header og footer
+\usepackage{fancyhdr}
+\usepackage[english,icelandic]{babel} % Íslenska
+\usepackage[T1]{fontenc} % Íslenska
+\usepackage[utf8]{inputenc} % Íslenska
+
+\usepackage{float}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[cm]{fullpage}
+
+%Other packages
+\usepackage{mhchem}
+\usepackage{mdframed}
+%\usepackage{longtable}
+\usepackage[cm]{fullpage}
+%\usepackage[usenames]{color} %TIL að lita
+\usepackage{hyperref} % Fyrir ref
+%\usepackage{soul} % Notað fyrir áherslu - sjá \so
+%\usepackage{marvosym} %Notað til að fá fram ýmis tákn
+%\usepackage{tabularx,colortbl} %Búa til töflur, og gráa bordera
+
+%\voffset=-1.0in
+%\hoffset=-0.3in
+%\textwidth=6in
+%\textheight=10.2in
+
+%----------Custom Commands-------------------------
+\newcommand{\unit}[1]{\ensuremath{\, \mathrm{#1}}}
+\newcommand{\nucl}[3]{
+	\ensuremath{
+	\phantom{\ensuremath{^{#1}_{#2}}}
+	\llap{\ensuremath{^{#1}}}
+	\llap{\ensuremath{_{\rule{0pt}{.75em}#2}}}
+	\mbox{#3}
+	}
+}
+%----------------------------------------------
+
+
+%-------Change Headers and Sections------------
+\titleformat{\section}{\LARGE\scshape\bfseries\raggedright}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\Large\bfseries\raggedright}{}{0em}{}[]
+\fancyhf{}
+\pagestyle{fancy}
+\headsep=0.1cm
+\voffset=-0.5cm
+%\rhead{Lecture \thesection}
+
+\begin{document}
+
+%------Title and table of contents ------------
+%\input{title}
+%\tableofcontents
+%\newpage
+%----------------------------------------------
+
+
+\titleformat{\section}{\LARGE\scshape\bfseries\raggedright}{}{0em}{}[\titlerule]
+\fancyhf{}
+\pagestyle{fancy}
+%\rhead{Lecture \thesection}
+
+
+\noindent <+Class+> Fall 2013 \hfill email: gws5257@psu.edu\\
+\today \hfill Student ID: 957543235
+\rule[8pt]{\textwidth}{1pt}
+\begin{center}
+	\LARGE{<+Title+>} \\
+	\vspace{0.4cm}
+	\large{Guðmundur Kári Stefánsson}
+\end{center}
+\input{<+file+>}
+
+\end{document}
+
+
