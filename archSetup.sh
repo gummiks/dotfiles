@@ -1,4 +1,7 @@
 #!/bin/bash
+#This is a setup script written by gummiks
+#I have never used it fully so be careful - might be better for reference before
+#I clean it up
 echo "Updating system..."
 sudo pacman -Syy
 echo "Backing up mirrorlist..."
