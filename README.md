@@ -1,4 +1,4 @@
 dotfiles
 ========
 
-there are many linux things in life
+the Earth is a very small stage, in a vast cosmic arena - my computer is even smaller
