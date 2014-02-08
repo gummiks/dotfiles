@@ -113,25 +113,90 @@ snippet section
 	${1:Section}~\ref{${2:sec:}}${3}
 snippet page
 	${1:page}~\pageref{${2}}${3}
-
+snippet cit
+	\cite{${1}} ${2}
+snippet refeq
+	\ref{eq:${1:myEQ}} ${2}
+snippet reffig
+	\ref{fig:${1:myFIG}} ${2}
+snippet reftab
+	\ref{tab:${1:myTAB}} ${2}
 snippet cw
 	\columnwidth
+snippet <>
+	\langle ${1:eq} \rangle ${2}
 
 snippet tw
 	\textwidth
 
-snippet mini
+snippet mbf
+	\mathbf{${1}} ${2}
+
+snippet multic
+	\begin{multicols}{2}
+		${1}
+	\end{multicols}
+
+snippet minicol2
+	%END MULTICOLS
+	\end{multicols}
 	\begin{figure}[H]
 	\centerline{\begin{minipage}{${1:1.1}\textwidth}
 	\centering
 	\begin{minipage}{${2:0.45}\textwidth}
 		\subfloat[]{\includegraphics[width=\textwidth]{${3:}}} 
 	\end{minipage}
+	\hspace{-0.2cm}
 	\begin{minipage}{${4:0.45}\textwidth}
-		\subfloat[]{\includegraphics[width=\textwidth]{${5:}}}
+		\subfloat[]{\includegraphics[width=\textwidth]{$3${5:}}}
 	\end{minipage}
 	\caption{\footnotesize{${6:}}} 
 	\label{fig:${7:}} 
 	\end{minipage}}
 	\end{figure}
+	%START MULTICOLS AGAIN
+	\begin{multicols}{2}
+	${8:}
+
+snippet minicol3
+	%END MULTICOLS
+	\end{multicols}
+	\begin{figure}[H]
+	\centerline{\begin{minipage}{${1:1.1}\textwidth}
+	\centering
+	\begin{minipage}{${2:0.33}\textwidth}
+		\subfloat[]{\includegraphics[width=\textwidth]{${3:}}} 
+	\end{minipage}
+	\hspace{-0.1cm}
+	\begin{minipage}{${4:0.33}\textwidth}
+		\subfloat[]{\includegraphics[width=\textwidth]{$3${5:}}}
+	\end{minipage}
+	\hspace{-0.1cm}
+	\begin{minipage}{${6:0.33}\textwidth}
+		\subfloat[]{\includegraphics[width=\textwidth]{$3${7:}}}
+	\end{minipage}
+	\caption{\footnotesize{${8:}}} 
+	\label{fig:${9:}} 
+	\end{minipage}}
+	\end{figure}
+	%START MULTICOLS AGAIN
+	\begin{multicols}{2}
+	${10:}
+
+snippet astrotab
+	\begin{table}[H]
+		\centering
+		\caption{${1:}}
+		\begin{tabular}{${2:}}
+		\hline\hline
+		${3:}
+		\hline
+		\end{tabular}
+		\label{tab:${4:}}
+	\end{table}
+	${5:}
+
+
+
+
 

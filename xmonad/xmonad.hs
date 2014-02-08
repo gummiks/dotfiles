@@ -65,7 +65,7 @@ main = do
         , ((mod4Mask, xK_F10), spawn "amixer -q set Master toggle") --for playback control
         , ((mod4Mask, xK_F11), spawn "amixer -q set Master 3-")
         , ((mod4Mask, xK_F12), spawn "amixer -q set Master 3+ unmute")
-        , ((mod4Mask, xK_b), spawn "google-chrome")
+        , ((mod4Mask, xK_b), spawn "google-chrome-stable")
         , ((mod4Mask, xK_f), spawn "spacefm")
         , ((mod4Mask, xK_g), spawn "gimp")
         , ((mod4Mask, xK_d), spawn "darktable")

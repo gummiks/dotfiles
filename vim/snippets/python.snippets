@@ -177,6 +177,9 @@ snippet twofig
 	ax = fig.add_subplot(111)
 	fig2 = plt.figure()
 	bx = fig2.add_subplot(111)
+	adjustprops = dict(left=0.19,bottom=0.15,right=0.92,top=0.9,wspace=0.,hspace=0.2)
+	fig.subplots_adjust(**adjustprops)	
+	fig2.subplots_adjust(**adjustprops)	
 
 	ax.set_xlabel(r'$x$',size="x-large")
 	ax.set_ylabel(r'$y$',size="x-large")
@@ -202,6 +205,8 @@ snippet fig11
 	#One Figure
 	fig = plt.figure()
 	ax = fig.add_subplot(111)
+	adjustprops = dict(left=0.19,bottom=0.15,right=0.92,top=0.9,wspace=0.,hspace=0.2)
+	fig.subplots_adjust(**adjustprops)	
 
 	ax.set_xlabel(r'$x$',size="x-large")
 	ax.set_ylabel(r'$y$',size="x-large")

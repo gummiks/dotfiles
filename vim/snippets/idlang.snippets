@@ -1,0 +1,72 @@
+#
+#GKS IDL snippets - to make life a little bit easier
+#
+
+snippet func
+	FUNCTION ${1:name}, ${2:}
+		;+
+		; NAME:
+		;	$1()
+		;
+		; PURPOSE:
+		;	${3:}
+		;
+		; CALLING SEQUENCE:
+		;	${4:res} = $1($2)  
+		;
+		; INPUT PARAMETERS:
+		;	$2        ${5:}
+		; 
+		; OPTIONAL INPUT:
+		;	${6:}	  
+		;
+		; OUTPUT PARAMETERS:
+		;	$4	  ${7:}
+		; 
+		; NOTES:
+		;	${8:}
+		;
+		; MODIFICATION HISTORY:
+		;	Coded by G. K. Stefansson - ${9:date}
+		;
+		;-
+		
+		${10:}
+	
+		RETURN, <+res+>
+	END
+
+snippet oplot
+	oplot, ${1:x}, ${2:y}, linestyle=2, thick=3
+
+snippet legend
+	
+snippet xyouts
+	xyouts, ${1:x}, ${2:y}, ${3:str}, charsize=1.5
+
+snippet plot
+	plot, ${1:x}, ${2:y}, linestyle=0, xstyle=1, $
+	yrange=${3:[1,2]}, xrange=${4:[1,2]}, $
+	thick=3, charsize=1.5, $
+	xtitle=${5:xstr}, ytitle=${6:ystr}
+	${7:}
+
+
+snippet for
+	FOR i = 0, ${1:N-1} DO BEGIN
+		${2:print, i}
+	ENDFOR
+
+snippet ifelsekey
+	IF KEYWORD_SET(${1:trapezoid}) THEN BEGIN
+		${2:}
+	ENDIF ELSE BEGIN
+		${3:}
+	ENDELSE
+
+snippet ifkey
+	IF KEYWORD_SET($(1:plot}) THEN BEGIN
+		${2:}
+	ENDIF
+	
+

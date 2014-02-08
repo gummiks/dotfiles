@@ -111,6 +111,7 @@ alias lhelp="vim ~/Dropbox/Skoli/linux/linuxHelp.tex"
 alias ssr="ssh -l ssr ssrdb.no-ip.org"
 alias t="/home/gks/Dropbox/things/todo.sh"
 alias sshgks4="sshfs gks4@katla.rhi.hi.is:/heima/gks4/.public_html /mnt/gks4"
+alias myrafs="sshfs gws5257@myra.astro.psu.edu:/astro/grads/gws5257 /mnt/myra"
 alias ssrftp="sftp ssr@ssrdb.no-ip.org"
 alias sshssr="sshfs ssr@ssrdb.no-ip.org:/mnt/datadisk/ /mnt/datadisk"
 alias sshMusic="sshfs ssr@ssrdb.no-ip.org:/home/ssr/Music /mnt/ssrMusic"
@@ -152,6 +153,12 @@ alias cernf="sftp gstefans@lxplus.cern.ch"
 alias cernh="ssh gstefans@lxplus.cern.ch"
 alias g="gvim"
 alias sshw="ssh -X gws5257@128.118.147.79"
+alias jeksize="mogrify -resize 800 *.jpg"
+alias julia="~/julia/./julia"
+alias myra="ssh -X gws5275@myra.astro.psu.edu"
+alias myra1="ssh gws5275@myra.astro.psu.edu"
+alias jul="ipython notebook --profile julia"
+
 
 shopt -s autocd
 #python /home/gks/.termquotes/termquotes.py

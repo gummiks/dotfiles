@@ -55,16 +55,19 @@ main = do
         , modMask = mod4Mask     -- Rebind Mod to the Windows key GKS
         } `additionalKeys`
         [ ((mod4Mask, xK_F2), spawn "gmrun")
-        , ((mod4Mask .|. controlMask .|. mod1Mask, xK_F2), spawn "gedit ~/.gmrunrc")
-        , ((mod4Mask, xK_F3), spawn "~/.config/dmenu/dmenu-bind.sh")
-        , ((mod4Mask .|. controlMask .|. mod1Mask, xK_F3), spawn "gedit ~/.config/dmenu/dmenu-bind.sh") -- edit dmenu
-        , ((mod4Mask, xK_F4), spawn "close") -- set mod4Mask = 0 for no modMask
-        , ((mod4Mask, xK_F6), spawn "xkill")
-      --  , ((mod4Mask, xK_), spawn "~/.config/dmenu/dmenu-bind.sh")
+        , ((mod4Mask, xK_F3), spawn "asus-kbd-backlight down") 
+        , ((mod4Mask, xK_F4), spawn "asus-kbd-backlight up") 
+        , ((mod4Mask, xK_F5), spawn "asus-screen-brightness down") 
+        , ((mod4Mask, xK_F6), spawn "asus-screen-brightness up") 
+        , ((mod4Mask, xK_F7), spawn "asus-screen-brightness night") 
+        , ((mod4Mask, xK_F9), spawn "xkill")
+        , ((mod4Mask, xK_F10), spawn "amixer -q set Master toggle") --for playback control
+        , ((mod4Mask, xK_F11), spawn "amixer -q set Master 3-")
+        , ((mod4Mask, xK_F12), spawn "amixer -q set Master 3+ unmute")
         , ((mod4Mask, xK_b), spawn "google-chrome")
-        , ((mod4Mask .|. mod1Mask, xK_b), spawn "seamonkey")
         , ((mod4Mask, xK_f), spawn "spacefm")
-        , ((mod4Mask, xK_g), spawn "gvim")
+        , ((mod4Mask, xK_g), spawn "gimp")
+        , ((mod4Mask, xK_d), spawn "darktable")
         , ((mod4Mask, xK_m), spawn "vlc")
         , ((mod4Mask, xK_n), sendMessage ToggleStruts) -- toggle panel visability.
         , ((mod4Mask .|. controlMask .|. mod1Mask, xK_n), spawn "gedit ~/.config/tint2/tint2rc") -- edit panel config

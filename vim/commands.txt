@@ -4,6 +4,25 @@ commands.txt
 :Email: gks@zen
 :Date: 2013-07-10 14:32
 
+TeX-snippets
+============
+cw
+tw
+refeq
+reftab
+reffig
+mini
+mat - MATRIX
+begin - BEGIN
+tab
+<> - langle rangle
+mbf - mathbf
+multic - multicols
+cit - cite
+pressing F5 consistently
+or having selected -> then press <F5>
+
+
 Surround.txt
 ============
 ysiw)
@@ -11,6 +30,25 @@ ysiW}
 ds"
 cs)"
 ysiw\ --LaTeX
+
+
+AlignMaps
+=========
+\tt - Align LaTeX tables
+\t= - Align "=" signs
+
+SnipMate
+========
+When using myfile.endfile
+:set ft=endfile
+
+To see you filetype:
+:set ft 
+
+Add to vimrc perhaps?
+au BufNewFile,BufRead *.endfile set filetype=endfile
+
+
 
 EasyMotion
 ==========
@@ -27,6 +65,9 @@ sudo packer -S root
 sudo packer -S insync-nautilus
 sudo pacman -S cups
 sudo pacman -S xclip
+
+WORD COUNT VIM
+g; CTRL+g
 
 GIT
 ===
