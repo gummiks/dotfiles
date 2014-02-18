@@ -76,16 +76,18 @@ snippet keyplot
 		cgWindow
 		!x.thick=4
 		!y.thick=4
-		nstring = strtrim(n, 2)
+		; nstring = strtrim(n, 2)
 		xstr = '${2:x}'
 		ystr = '${3:y}'
 		cgPlot, ${4:xArr}, ${5:yArr}, color='red', xstyle=1, ystyle=2, font=-1, /window, thick=3, $
 			Aspect=2./3, XTitle=xstr, YTitle=ystr, charsize=2 ${6:, /xlog, /ylog}
-		cgLegend, Title=[${7:Data1}], PSym=[-15,-16], $
-		        SymSize=2, Color=['red','dodger blue'], Location=[${8:1,2}], /Data, $
-	                /Center_Sym, LineStyle=[0,2], VSpace=2.0, /Box, Alignment=4, /AddCmd
+	leg1 = '${7:data1}'
+	leg2 = '${8:data2}'
+	cgLegend, Title=[leg1, leg2], $
+		SymSize=2, Color=['red','blue'], Charsize=2.0, Location=[${9:}], /Data, $
+		/Center_Sym, LineStyle=[0,0], VSpace=2.0, /Box, Alignment=4, /AddCmd
 	ENDIF
-	${9:}
+	${10:}
 
 snippet text
 	TexToIDL('${1:myText}') ${2:}
@@ -96,4 +98,7 @@ snippet keypdf
 		cgControl, Output=outputname
 	ENDIF
 	
+snippet arr
+	make_array(${1:numRowsN},${2:numColumns1},/DOUBLE, value=${3:0}) 
+	${4:}
 
