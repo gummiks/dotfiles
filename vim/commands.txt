@@ -71,6 +71,12 @@ g; CTRL+g
 
 GIT
 ===
+Deleting on remote branch:
+- First delete locally, then issue
+git commit -a -m "A file was deleted"
+
+
+
 $ git config --global user.name "Your Name Here"
 $ git config --global user.email "your_email@example.com"
 

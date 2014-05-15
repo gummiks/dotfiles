@@ -140,6 +140,7 @@ alias sfsdr="sshfs gks@10.0.0.1:/home/gks/Dropbox /mnt/archDropbox/"
 alias myx2x='ssh -X gks@10.0.0.1 "x2x -west -to :0." &'
 alias single='~/.screenlayout/./lapOnly.sh'
 alias cernR='~/.screenlayout/./cernRight.sh'
+alias davey541='~/.screenlayout/./davey541.sh'
 alias psuL='~/.screenlayout/./psuLeft.sh'
 alias one='~/.screenlayout/./cernOne.sh'
 alias hR='~/.screenlayout/./hR.sh'
@@ -158,6 +159,7 @@ alias julia="~/julia/./julia"
 alias myra="ssh -X gws5275@myra.astro.psu.edu"
 alias myra1="ssh gws5275@myra.astro.psu.edu"
 alias jul="ipython notebook --profile julia"
+alias myrankmirr="sudo ~/Dropbox/dotfiles/./rank_arch_mirrors.sh"
 
 
 shopt -s autocd

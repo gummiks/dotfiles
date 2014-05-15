@@ -25,6 +25,7 @@ map <leader>n :NERDTreeToggle<CR>
 :command TEX set filetype=tex
 :command PY set filetype=python
 :command XML set filetype=xml
+:command BKS :%s/_/\\_/gc
 "--------NERDTREE------------
 map <F4> \ll
 "Make bashaliases work from vim, useing !command
