@@ -1,4 +1,6 @@
 # \begin{}...\end{}
+snippet counter
+	\setcounter{${1:section}}{${2:1}}
 snippet begin
 	\begin{${1:env}}
 		${2}
@@ -128,15 +130,12 @@ snippet <>
 
 snippet tw
 	\textwidth
-
 snippet mbf
 	\mathbf{${1}} ${2}
-
 snippet multic
 	\begin{multicols}{2}
 		${1}
 	\end{multicols}
-
 snippet minicol2
 	%END MULTICOLS
 	\end{multicols}
@@ -157,7 +156,6 @@ snippet minicol2
 	%START MULTICOLS AGAIN
 	\begin{multicols}{2}
 	${8:}
-
 snippet minicol3
 	%END MULTICOLS
 	\end{multicols}
@@ -182,7 +180,6 @@ snippet minicol3
 	%START MULTICOLS AGAIN
 	\begin{multicols}{2}
 	${10:}
-
 snippet astrotab
 	\begin{table}[H]
 		\centering
@@ -195,25 +192,30 @@ snippet astrotab
 		\label{tab:${4:}}
 	\end{table}
 	${5:}
-
-
 snippet rm
 	\mathrm{${1:}} ${2:}
-
-
 snippet notag
 	\notag \\
 	${1:}
-
-
 snippet INL
 	\\( ${1:} \\) ${2:}	
-
 snippet align
 	\begin{align}
 		${1:}
 	\end{align}
 	${2:}
-
 snippet __
 	\_${1:}
+
+snippet fig
+	\begin{figure}[${1:H}]
+	\begin{center}
+		\includegraphics[width=${2:\columnwidth}]{<+file+>}
+	\end{center}
+	\caption{\footnotesize{<+caption+>}}
+	\label{fig:<+label+>}
+	\end{figure}<++>
+snippet nucl
+	$^{${1:3}}\mathrm{${2:He}}$${3:}
+snippet MS
+	M_{\odot}${1:}

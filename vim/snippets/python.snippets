@@ -28,8 +28,36 @@ snippet def
 		"""${3:docstring for $1}"""
 		${4:pass}
 snippet deff
-	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
-		${3}
+	def ${1:my_func}(${2:}):
+		"""
+		DESCRIPTION:
+		       ${3:}
+		
+		CALLING SEQUENCE:
+		       ${4:res} = $1($2)  
+		
+		INPUT PARAMETERS:
+		       $2        ${5:}
+		
+		OPTIONAL INPUT:
+		       ${6:}	  
+		
+		OUTPUT PARAMETERS:
+		       $4	  ${7:}
+		
+		NOTES:
+		       Dependencies: ${8:}
+		       keywords:
+		       res = $1(.. , keyw='')
+		
+		MODIFICATION HISTORY:
+		       Coded by G. K. Stefansson - ${9:date}
+		"""
+		
+		${10:}
+	
+		return <+res+>
+
 # New Method
 snippet defs
 	def ${1:mname}(self, ${2:arg}):
@@ -132,34 +160,28 @@ snippet scip
 	from scipy import *
 	import scipy.constants as const
 	${1:pass}
-
 snippet plot
-	plot(${1:X},${2:Y},color="${3:blue}",linewidth=${4:1},linestyle="${5:-,--}",label="${6:}")
-	${7:}
-
+	plot(${1:X},${2:Y},color="${3:blue}",linewidth=${4:1},linestyle="${5:-,--}",label="${6:}")${7:}
 snippet errorbar
 	errorbar(${1:X},${2:Y},xerr=${3:xErr},yerr=${4:yErr},marker="${5:D}",fmt=None,elinewidth=${6:1})
 	${7:}
-
 snippet encoding
 	#!/usr/bin/python
 	# -*- coding: utf-8 -*-	
-
 snippet fopen
-	f = open(${1:file},"w")
-	f.write(${2:string})
-	f.clos()
-
+	f = open(${1:name[:-4]+".log"},"w")
+	commentString = "${2:# \n}"
+	f.write(commentString)
+	f.write(${3:string} + "\n")
+	f.close()
 snippet font
 	font = {'family' : 'serif',
 		'weight' : 'normal',
 		'size'	 : 18}
 	matplotlib.rc('font',**font)
-
 snippet nbins
 	plt.locator_params(axis="${1:x}",nbins=${2:4})
 	${3:}
-
 snippet changeticks
 	def changeTicks(axis,num):
 		"""Change ticks on axes, either x or y"""
@@ -327,11 +349,49 @@ snippet fig13
 	ax.plot
 	bx.plot
 	cx.plot
+snippet fig31
+	figprops = dict(figsize=(8.,8./2.118), dpi=256)
+	adjustprops = dict(left=0.13,bottom=0.12,right=0.97,top=0.83,wspace=0.,hspace=0.2)
 
+	#fig = plt.figure(**figprops)
+	fig = plt.figure()
+	fig.subplots_adjust(**adjustprops)
+
+	ax = fig.add_subplot(3,1,1)
+	bx = fig.add_subplot(3,1,2)
+	cx = fig.add_subplot(3,1,3)
+	#bx = fig.add_subplot(3,1,2,sharex=ax,sharey=ax)
+	#cx = fig.add_subplot(3,1,3,sharex=ax,sharey=ax)
+
+	ax.set_ylabel(r'<++>',size="x-large")
+	bx.set_ylabel(r'<++>',size="x-large")
+	cx.set_ylabel(r'<++>',size="x-large")
+	cx.set_xlabel(r'<++>',size="x-large")
+
+	#ax.set_xlim()
+	#ax.set_ylim()
+	#bx.set_xlim()
+	#bx.set_ylim()
+	#cx.set_xlim()
+	#cx.set_ylim()
+
+	ax.grid()
+	bx.grid()
+	cx.grid()
+	ax.minorticks_on()
+	bx.minorticks_on()
+	cx.minorticks_on()
+
+	plt.setp(ax.get_xticklabels(),visible=False)
+	plt.setp(bx.get_xticklabels(),visible=False)
+
+	#PLOT
+	ax.plot
+	bx.plot
+	cx.plot
 snippet legend
 	legend(loc="${1:lower right}",prop={'size':${2:16}})
 	${3:}
-
 snippet plotall
 	#Plot all files in the current folder
 	import subprocess
@@ -360,16 +420,29 @@ snippet plotall
 		ax.plot(x,y,color="blue",linewidth=1,linestyle="-",label="")
 
 		savefig(name+".pdf")
-
 snippet tickRotate
 	#Rotateticks
 	for label in ${1:ax}.get_xticklabels():
 		#negative clockwise; positive counterclockwise
 		label.set_rotation(${2:-20})
 	${3:}
-	
 snippet intTick
 	#int-ify ticks
 	myTicks = [int(x) for x in linspace(min(${1:x}),max(${2:x}),${3:})]
 	${4:ax}.set_${5:x}ticks(myTicks)
+snippet xlog
+	ax.set_xscale("log")
+snippet ylog
+	ax.set_yscale("log")
 
+snippet #-
+	#--------------------------------------
+
+snippet #--
+	#------------------------------------------------------------------------------
+
+snippet ##
+	#------------------------------------------------------------------------------
+	# ${1:Comment}
+	#------------------------------------------------------------------------------
+	${2:}

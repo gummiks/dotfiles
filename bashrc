@@ -144,12 +144,14 @@ alias davey541='~/.screenlayout/./davey541.sh'
 alias psuL='~/.screenlayout/./psuLeft.sh'
 alias one='~/.screenlayout/./cernOne.sh'
 alias hR='~/.screenlayout/./hR.sh'
+alias hRfiber='~/.screenlayout/./hRfiberlab.sh'
+alias hL='~/.screenlayout/./uclub_left.sh'
 alias dual='~/.screenlayout/./archRight.sh'
 alias duall='~/.screenlayout/./oldLeft.sh'
 alias snip="cd ~/Dropbox/dotfiles/vim/snippets/"
 alias cups="sudo systemctl start cups.service"
 alias backlight="asus-screen-brightness"
-alias jsw="cd ~/Dropbox/jekyll/gummiks.github.io/ && jekyll serve --watch"
+alias jsw="cd ~/Dropbox/jekyll/gummiks.github.io.raw/ && jekyll serve --watch"
 alias cernf="sftp gstefans@lxplus.cern.ch"
 alias cernh="ssh gstefans@lxplus.cern.ch"
 alias g="gvim"
@@ -159,20 +161,40 @@ alias julia="~/julia/./julia"
 alias myra="ssh -X gws5275@myra.astro.psu.edu"
 alias myra1="ssh gws5275@myra.astro.psu.edu"
 alias jul="ipython notebook --profile julia"
-alias myrankmirr="sudo ~/Dropbox/dotfiles/./rank_arch_mirrors.sh"
-
+alias rankmymirr="sudo ~/Dropbox/dotfiles/./rank_arch_mirrors.sh"
+alias jbb="cd ~/Dropbox/jekyll/gummiks.github.io.raw/ ; jekyll build ; cp -R _site/* ../gummiks.github.io ; cd ../gummiks.github.io"
+alias dt="/opt/darktable/bin/./darktable"
+alias hpp="/home/gks/Dropbox/PSU/RESEARCH/thermal_enclosure_tempmonitoring/./autoplot.sh ; cd /home/gks/Dropbox/jekyll/gummiks.github.io/research/hpf_temps ; git status"
+alias hpp2="/home/gks/Dropbox/PSU/RESEARCH/thermal_enclosure_tempmonitoring/./autoplot.sh" 
+NOW=$(date +"%Y%m%d_%T")
+alias hpp3="/home/gks/Dropbox/PSU/RESEARCH/thermal_enclosure_tempmonitoring/./autoplot.sh > /home/gks/Dropbox/PSU/RESEARCH/thermal_enclosure_tempmonitoring/output/output_$NOW.txt"
+alias hpg="git add . ; git commit -am 'Update HPF Temp Plots' ; git push origin master"
 
 shopt -s autocd
 #python /home/gks/.termquotes/termquotes.py
 archey
 xmodmap -e "keycode 49 = less greater bar bar bar bar"
 PATH=$PATH:/home/gks/Dropbox/dotfiles/shortcuts
-PATH=$PATH:/home/gks/.gem/ruby/2.0.0/bin
+#PATH=$PATH:/home/gks/.gem/ruby/2.0.0/bin
 
 . /usr/bin/thisroot.sh
 
-export PATH
 export PATH=$PATH:/home/gks/intel/bin/
 export EDITOR=vim
 export LD_LIBRARY_PATH=$ROOTSYS/lib:$PYTHONDIR/lib:$LD_LIBRARY_PATH
 export PYTHONPATH=$ROOTSYS/lib:$PYTHONPATH
+export PYTHONPATH=$PYTHONPATH:/home/gks/Dropbox/PSU/Courses/astro534/my_lib 
+PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+#PATH="/home/gks/.gem/ruby/2.1.0/bin:$PATH"
+#PATH="/home/gks/.gem/ruby/2.0.0/bin:$PATH"
+#export PATH
+
+
+#MESA STUFF - TAKE THIS OUT AFTER USING IT
+#export MESASDK_ROOT="/home/gks/mesa/mesasdk"
+#source $MESASDK_ROOT/bin/mesasdk_init.sh
+#export MESA_DIR="/home/gks/mesa/mesa-r7385"
+#export OMP_NUM_THREADS=4
+
+
+#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
